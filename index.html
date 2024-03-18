@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>uvirton</title>
+</head>
+
+<body>
+   <promhtml>
+      <style>
+         :root {
+            --mycolor1: #1b344b;
+            --mycolor2: #009bc4;
+            --mycolor3: #f0d53a;
+         }
+
+         body {
+            background-color: #f4f4f4;
+         }
+
+         .own__wrapp {
+            max-width: 980px;
+            margin: 0 auto;
+            background-color: #ffffff;
+         }
+
+         .own__wrapp h2 {
+            text-align: center;
+         }
+
+         .uc-btns {
+            display: inline-block;
+            padding: 12px 45px;
+            text-decoration: none !important;
+            text-align: center;
+            border-radius: 3px;
+            background: var(--mycolor1);
+            border: 1px solid var(--mycolor1);
+            color: #ffffff !important;
+            font-size: 16px;
+            transition: all .3s;
+            font-weight: 500;
+         }
+
+         .uc-btns:hover {
+            border-radius: 20px;
+         }
+
+         /*-----------------------------------------*/
+
+         .ucv-a2-gif {
+            position: absolute;
+            width: 200px;
+            right: 50%;
+            bottom: 0px;
+         }
+
+
+         .ucv-a2-panel {
+            background: #ffffff;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            position: relative;
+         }
+
+         .ucv-a2-panel:after {
+            content: " ";
+            display: block;
+            clear: both;
+            font-size: 0px;
+         }
+
+         .ucv-a2-texts {
+            overflow: hidden;
+            padding: 30px 40px 30px;
+            text-align: left;
+            margin: auto 0;
+
+         }
+
+         .ucv-a1-img-holder {
+            float: right;
+            width: 45%;
+            max-width: 500px;
+            min-width: 400px;
+            padding: 0;
+         }
+
+         .ucv-a1-img-holder img {
+            display: block;
+            width: 100% !important;
+         }
+
+         .ucv-a1-img-holder img.ucv-a1-alt-img {
+            display: none;
+         }
+
+         .ucv-a1-img-holder img.ucv-a1-alt2-img {
+            display: none;
+         }
+
+         .ucv-a2-header {
+            font-size: 40px;
+            line-height: 1.1em;
+            color: var(--mycolor2);
+            margin: 0px 0px 10px !important;
+            font-weight: bold;
+         }
+
+         .ucv-a2-sub-header {
+            font-size: 22px;
+            line-height: 1.2em;
+            color: #333;
+            margin: 0px 0px 10px !important;
+         }
+
+         .ucv-a2-text {
+            font-size: 16px;
+            line-height: 1.2em;
+            color: #333;
+            margin: 0px 0px 10px !important;
+         }
+
+         @media screen and (max-width: 990px) {
+            .ucv-a2-texts {
+               width: 50%;
+               max-width: 100%;
+            }
+
+            .ucv-a2-panel {
+               display: block;
+            }
+
+            .ucv-a2-gif {
+               display: none;
+            }
+         }
+
+         @media screen and (max-width: 768px) {
+            .ucv-a2-texts {
+               width: 80%;
+            }
+
+            .ucv-a5-link {
+               padding: 9px 25px;
+            }
+
+         }
+
+         @media screen and (max-width: 600px) {
+            .ucv-a2-panel {
+               padding: 15px;
+
+            }
+
+            .ucv-a2-texts {
+               width: auto;
+            }
+
+            .ucv-a2-texts {
+               width: auto;
+               padding: 20px 20px;
+               border-radius: 10px;
+               clear: both;
+            }
+
+            .ucv-a2-header {
+               font-size: 30px;
+               line-height: 1em;
+               margin: 0px 0px 25px !important;
+            }
+
+            .ucv-a2-header span {
+
+               font-size: 15px;
+            }
+
+            .ucv-a2-sub-header {
+               font-size: 16px;
+            }
+
+         }
+
+         @media screen and (max-width: 990px) {
+
+
+            .ucv-a1-img-holder img {
+               display: none;
+            }
+
+            .ucv-a1-img-holder img.ucv-a1-alt-img {
+               display: block;
+            }
+         }
+
+
+
+         @media screen and (max-width: 768px) {
+            .ucv-a1-img-holder {
+               max-width: 100%;
+               padding: 0;
+            }
+
+            .ucv-a1-img-holder img.ucv-a1-alt-img {
+               display: none;
+            }
+
+            .ucv-a1-img-holder img.ucv-a1-alt2-img {
+               display: block;
+            }
+
+            .ucv-a1-img-holder {
+               float: none;
+               margin: 0;
+               width: 100%;
+               padding-top: 0;
+            }
+
+            .ucv-a1-img-holder img {
+               width: auto !important;
+               max-width: 100%;
+            }
+         }
+
+         @media screen and (max-width: 450px) {
+            .ucv-a1-img-holder {
+               display: none;
+
+            }
+         }
+
+         /*---------------------------------------*/
+
+         .advantages {
+            padding: 20px 15px;
+            background-color: #fff;
+         }
+
+         .advatages__content a {
+            color: var(--mycolor3);
+         }
+
+         .advantages__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+         }
+
+         .advantages__wrapper-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+         }
+
+         .advantages__image {
+            width: 45%;
+            margin: 10px;
+            transition: .3s;
+         }
+
+         .advantages__image:hover {
+            transform: scale(1.02);
+            transition: .3s;
+         }
+
+         .advantages__image img {
+            width: 100%;
+            border-radius: 20px;
+
+         }
+
+         .advatages__content {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #fff;
+
+         }
+
+
+         .advatages-item {
+            padding: 10px 20px;
+            color: #fff;
+            background: var(--mycolor1);
+            margin: 10px;
+            border-radius: 20px;
+            position: relative;
+            transition: .3s;
+            z-index: 1;
+         }
+
+         .advatages-item:hover {
+            transform: scale(1.02);
+            transition: .3s;
+
+         }
+
+         .advatages-item:nth-child(even) {
+            background: var(--mycolor2);
+         }
+
+         .advatages-icon {
+            text-align: left;
+         }
+
+         .advatages-title {
+            font-size: 18px !important;
+            text-transform: uppercase !important;
+            margin: 10px 0 10px !important;
+            font-weight: 600 !important;
+         }
+
+         .advatages-text {
+            font-size: 14px;
+         }
+
+         @media screen and (max-width: 720px) {
+            .advantages__wrapper {
+               flex-direction: column-reverse;
+               justify-content: center;
+            }
+
+            .advantages__wrapper-2 {
+               flex-direction: column;
+            }
+
+            .advantages__image {
+               width: auto;
+            }
+
+            .advatages__content {
+               width: auto;
+            }
+         }
+
+         /*-------------------------------*/
+
+         .products {
+            padding: 20px 15px;
+
+         }
+
+         .products_wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+         }
+
+         .products_prod {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 600;
+            padding: 5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px !important;
+            min-height: 60px;
+            line-height: 1.3em;
+            text-transform: uppercase;
+            color: #ffffff;
+         }
+
+         .products-scheme {
+            color: #fff;
+            display: inline-block;
+            box-sizing: border-box;
+            position: relative;
+            width: 30%;
+            margin: 5% .5%;
+            padding: 20px;
+            text-align: center;
+            transition: all .3s ease;
+            border-radius: 15px;
+            background: var(--mycolor1);
+         }
+
+
+         .products-scheme:hover {
+            transform: scale(1.02);
+            transition: all .3s ease;
+         }
+
+
+         .products-scheme img {
+            max-width: 300px;
+            width: 100%;
+            margin-top: -50px;
+            height: auto;
+            border-radius: 20px;
+            border: 1px solid var(--mycolor1);
+         }
+
+         @media screen and (max-width: 1000px) {
+            .products-scheme {
+               width: 46%;
+            }
+
+         }
+
+         .uc-link-products {
+            display: inline-block;
+            padding: 12px 45px;
+            text-decoration: none !important;
+            text-align: center;
+            border-radius: 3px;
+            background: var(--mycolor2);
+            border: 1px solid var(--mycolor2);
+            color: #fff !important;
+            font-size: 16px;
+            transition: all .3s;
+            position: absolute;
+            font-weight: 500;
+            bottom: -20px;
+            right: 50%;
+            transform: translateX(50%);
+         }
+
+         .uc-link-products:hover {
+            border-radius: 20px;
+         }
+
+
+         @media screen and (max-width: 700px) {
+            .products-scheme {
+               width: 100%;
+               margin: 50px auto;
+            }
+         }
+
+         /*------------------------------------*/
+
+         .delivery {
+            padding: 20px 15px;
+         }
+
+         .delivery_wrapp {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px 0 0;
+         }
+
+         .delivery_item {
+            width: 42%;
+            background-color: var(--mycolor2);
+            padding: 20px;
+            margin: 15px 10px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 20px;
+         }
+
+         .delivery_item:nth-child(3) {
+            margin: 15px 10px 10px;
+         }
+
+         .delivery_item:nth-child(4) {
+            margin: 15px 10px 10px;
+         }
+
+         .delivery_icon {
+            background-color: #fff;
+            width: 100px;
+            height: 100px;
+            margin: -40px auto 20px;
+            border-radius: 100%;
+            border: 1px solid var(--mycolor1);
+            display: flex;
+            transition: .4s;
+         }
+
+         .delivery_item:hover .delivery_icon {
+            transform: scale(1.05) rotate(-10deg);
+            transition: .4s;
+         }
+
+         .delivery_icon img {
+            padding: 15px;
+         }
+
+         .delivery_content {}
+
+         .delivery_title {
+            font-size: 18px !important;
+            text-transform: uppercase !important;
+            font-weight: 600;
+            margin: 10px 0;
+
+         }
+
+         @media screen and (max-width: 800px) {
+            .delivery_item {
+               width: 80%;
+            }
+
+            .delivery_item:nth-child(3) {
+               margin: 15px 10px 20px;
+            }
+
+            .delivery_item:nth-child(4) {
+               margin: 15px 10px 20px;
+            }
+         }
+
+         @media screen and (max-width: 500px) {
+            .delivery_item {
+               width: 100%;
+            }
+         }
+      </style>
+      <div class="own__wrapp">
+         <div class="ucv-a2-panel">
+            <div class="ucv-a1-img-holder"><img alt="UVIRTON"
+                  src="https://internetsolution.com.ua/Pictures/uvirton/own.jpeg" style="width: 100%;" />
+               <img alt="" class="ucv-a1-alt-img" src="./Prom Content Blocks_files/400x600" /> <img alt=""
+                  class="ucv-a1-alt2-img" src="./Prom Content Blocks_files/800x400" />
+            </div>
+
+            <div class="ucv-a2-texts">
+               <p class="ucv-a2-header">UVIRTON</p>
+
+               <p class="ucv-a2-sub-header">- магазин товаров для дома и активного отдыха!
+
+               </p>
+
+               <p class="ucv-a2-text">Окружайте себя качественными вещами и повышайте уровень своей жизни. Предлагаем
+                  большой ассортимент товаров по приятным ценам, обеспечиваем быструю доставку по всей Украине!
+
+
+
+               </p>
+               <p style="clear: both; padding-top: 10px;"><a class="uc-btns"
+                     href="https://uvirton.com.ua/product_list">Перейти к выбору
+                  </a></p>
+               <img class="ucv-a2-gif" src="https://internetsolution.com.ua/Pictures/uvirton/001.gif" alt="gif">
+            </div>
+         </div>
+         <section class="advantages">
+            <h2>Почему покупатели выбирают интернет-магазин UVIRTON</h2>
+            <div class="advantages__wrapper">
+               <div class="advantages__image">
+                  <img src="https://internetsolution.com.ua/Pictures/uvirton/own-04.jpeg"
+                     alt="Разнообразие товаров интернет-магазина UVIRTON">
+               </div>
+               <div class="advatages__content">
+
+                  <div class="advatages-item">
+
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/002-icon.png" alt=""></div>
+                     <h4 class="advatages-title">Разнообразие товаров</h4>
+                     <div class="advatages-text">
+                        <p>В каталоге представлен огромный ассортимент продукции - более 3000 товарных позиций, среди
+                           которых есть <a href="https://uvirton.com.ua/g121679013-tovary-dlya-detej">товары для
+                              детей</a>,
+                           продукцию для дома, активного отдыха, спорта, товары для бизнеса. У нас можно купить игрушки,
+                           детский транспорт, инвентарь для домашних тренировок, бытовую технику, посуду, весы и многое
+                           другое
+                        </p>
+                     </div>
+
+
+                  </div>
+
+                  <div class="advatages-item ">
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/001-icon.png" alt=""></div>
+                     <h4 class="advatages-title">Приемлемые цены</h4>
+                     <div class="advatages-text">
+                        <p>Ценовая политика магазина UVIRTON Одесса лояльная и доступная, стоимость товаров оптимально
+                           соответствует качеству. Мы поддерживаем оптимальные цены, благодаря прямому сотрудничеству с
+                           поставщиками и отсутствию посредников в продажах. Многие позиции на сайте представлены с
+                           выгодными скидками - не упустите интересные предложения
+
+                        </p>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+            <div class="advantages__wrapper-2">
+
+               <div class="advatages__content">
+
+                  <div class="advatages-item ">
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/003-icon.png" alt=""></div>
+                     <p class="advatages-title">Экспертные консультации</p>
+                     <div class="advatages-text">
+                        <p>Менеджеры онлайн-магазина UVIRTON обладают многолетним опытом работы, отлично ориентируются в
+                           ассортименте и предоставляют грамотные консультации каждому клиенту. Если вам понадобится
+                           помощь
+                           в выборе товаров, обратитесь к нам и мы дадим рекомендации, учитывая индивидуальные
+                           предпочтения
+                           и пожелания
+
+                        </p>
+                     </div>
+
+                  </div>
+
+                  <div class="advatages-item ">
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/004-icon.png" alt=""></div>
+                     <p class="advatages-title">Оперативная доставка</p>
+                     <div class="advatages-text">
+                        <p>UVIRTON магазин товаров для активного отдыха обеспечивает быструю отправку и доставку
+                           заказов.
+                           Все товары есть в наличии, благодаря чему мы оперативно обрабатываем заявки. Заказы,
+                           оформленные
+                           и обработанные до 17:00, передаются на отправку в тот же день, если в более позднее время, то
+                           отправка выполняется на следующий день
+
+
+                        </p>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="advantages__image">
+                  <img src="https://internetsolution.com.ua/Pictures/uvirton/own-05.jpeg"
+                     alt="Экспертные консультации интернет-магазина UVIRTON">
+               </div>
+            </div>
+            <div class="advantages__wrapper">
+               <div class="advantages__image">
+                  <img src="https://internetsolution.com.ua/Pictures/uvirton/own-06.jpeg"
+                     alt="Доставка интернет-магазина UVIRTON">
+               </div>
+               <div class="advatages__content">
+
+                  <div class="advatages-item">
+
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/005-icon.png" alt=""></div>
+                     <p class="advatages-title">Любые объемы</p>
+                     <div class="advatages-text">
+                        <p>Наша компания предоставляет покупателям возможность приобрести продукцию в любых объемах. <a
+                              href="https://uvirton.com.ua/g117712247-sportivnye-tovary">Спортивные товары</a> и другие
+                           категории можно купить, как в розницу, для собственного использования, так и оптом, для
+                           своего
+                           бизнеса. Для оптовых покупателей действует специальный прайс со сниженными ценами
+
+                        </p>
+                     </div>
+
+                  </div>
+
+                  <div class="advatages-item">
+                     <div class="advatages-icon"><img
+                           src="https://internetsolution.com.ua/Pictures/uvirton/006-icon.png" alt=""></div>
+                     <p class="advatages-title">Нам доверяют</p>
+                     <div class="advatages-text">
+                        <p>Мы заботимся об удовлетворении интересов каждого клиента и прикладываем максимум усилий,
+                           чтобы
+                           вы остались довольными сотрудничеством и захотели вернуться к нам снова. Многочисленные
+                           положительные отзывы на сайте свидетельствуют о высоком уровне доверия покупателей, что мы
+                           очень
+                           высоко ценим
+
+
+                        </p>
+                     </div>
+
+                  </div>
+
+               </div>
+            </div>
+            <p style="clear: both; text-align: center;"><a class="uc-btns"
+                  href="https://uvirton.com.ua/testimonials">Отзывы наших клиентов</a></p>
+         </section>
+
+         <section class="products">
+            <h2>Основные категории товаров, представленные в онлайн-магазине UVIRTON Одесса
+            </h2>
+            <div class="products_wrap">
+               <div class="products-scheme">
+                  <a href="https://uvirton.com.ua/ua/g121679013-tovary-dlya-detej"><img
+                        alt="Товары для детей в онлайн-магазине UVIRTON"
+                        src="https://internetsolution.com.ua/Pictures/uvirton/own-01.jpeg" /></a>
+
+                  <p class="products_prod">Товары для детей</p>
+
+                  <p>Более 2600 товаров для детей разного возраста. Детский транспорт для прогулок и активного отдыха,
+                     игрушки для мальчиков и девочек, товары для малышей, все для летнего отдыха на воде. </p>
+
+                  <p style="text-align: center;  clear: both; margin-top: 25px;"><a class="uc-link-products"
+                        href="https://uvirton.com.ua/ua/g121679013-tovary-dlya-detej">Подробнее</a></p>
+               </div>
+
+               <div class="products-scheme">
+                  <a href="https://uvirton.com.ua/ua/g117712247-sportivnye-tovary"><img
+                        alt="Спортивные товары в онлайн-магазине UVIRTON"
+                        src="https://internetsolution.com.ua/Pictures/uvirton/own-02.jpeg" /></a>
+
+                  <p class="products_prod">Спортивные товары</p>
+
+                  <p>Более 300 товаров для спорта и активного отдыха. Среди них - сумки и рюкзаки, инвентарь для йоги и
+                     фитнеса, аксессуары для спорта, мангалы, барбекю, пляжные зонтики, гамаки и т.д. </p>
+
+                  <p style="text-align: center;  clear: both; margin-top: 25px;"><a class="uc-link-products"
+                        href="https://uvirton.com.ua/ua/g117712247-sportivnye-tovary">Подробнее</a>
+                  </p>
+               </div>
+
+               <div class="products-scheme">
+                  <a href="https://uvirton.com.ua/ua/g124293573-tovary-dlya-doma"><img
+                        alt="Товары для дома и бизнеса в онлайн-магазине UVIRTON"
+                        src="https://internetsolution.com.ua/Pictures/uvirton/own-03.jpeg" /></a>
+
+                  <p class="products_prod">Товары для дома и бизнеса</p>
+
+                  <p>В ассортименте более 250 товаров, среди которых - бытовая и климатическая техника, детская посуда,
+                     изысканная турецкая посуда, напольные и кухонные весы, весы для торгового бизнеса. </p>
+
+                  <p style="text-align: center;  clear: both; margin-top: 25px;"><a class="uc-link-products"
+                        href="https://uvirton.com.ua/ua/g124293573-tovary-dlya-doma">Подробнее</a></p>
+               </div>
+            </div>
+         </section>
+         <section class="delivery">
+            <h2>Схема сотрудничества с интернет-магазином UVIRTON
+            </h2>
+            <div class="delivery_wrapp">
+               <div class="delivery_item">
+                  <div class="delivery_icon">
+                     <img src="https://internetsolution.com.ua/Pictures/uvirton/007-icon.png"
+                        alt="Выбор товара в интернет-магазине UVIRTON">
+                  </div>
+                  <div class="delivery_content">
+                     <p class="delivery_title">Выбор товара</p>
+                     <p>Выберите товары из каталога или позвоните менеджеру если нужна консультация.
+                     </p>
+                  </div>
+               </div>
+               <div class="delivery_item">
+                  <div class="delivery_icon">
+                     <img src="https://internetsolution.com.ua/Pictures/uvirton/008-icon.png"
+                        alt="Оформление заказа в интернет-магазине UVIRTON">
+                  </div>
+                  <div class="delivery_content">
+                     <p class="delivery_title">Оформление заказа</p>
+                     <p> Оформите заказ через корзину сайта 24/7. Также мы на связи в мессенджерах и по телефону.
+
+                     </p>
+                  </div>
+               </div>
+               <div class="delivery_item">
+                  <div class="delivery_icon">
+                     <img src="https://internetsolution.com.ua/Pictures/uvirton/009-icon.png"
+                        alt="Финансовый расчет в интернет-магазине UVIRTON">
+                  </div>
+                  <div class="delivery_content">
+                     <p class="delivery_title">Финансовый расчет</p>
+                     <p>Способы оплаты - онлайн оплата картой, безналичный расчет, наложенный платеж с предоплатой 100
+                        грн.
+                     </p>
+                  </div>
+               </div>
+               <div class="delivery_item">
+                  <div class="delivery_icon">
+                     <img src="https://internetsolution.com.ua/Pictures/uvirton/010-icon.png"
+                        alt="Доставка заказа в интернет-магазине UVIRTON">
+                  </div>
+                  <div class="delivery_content">
+                     <p class="delivery_title">Доставка заказа</p>
+                     <p>Доставка осуществляется по Украине Новой почтой или Укрпочтой. Возможен самовывоз в Одессе.
+
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <p style="clear: both; text-align: center;"><a class="uc-btns"
+                  href="https://gg-store.com.ua/testimonials">Есть
+                  вопросы? Звоните!</a></p>
+         </section>
+      </div>
+   </promhtml>
+</body>
+
+</html>
